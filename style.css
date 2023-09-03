@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-gradient: linear-gradient(
+    347deg,
+    rgba(57, 157, 227, 1) 0%,
+    rgba(53, 71, 205, 1) 35%,
+    rgba(54, 0, 134, 1) 100%
+  );
+  --text-shadow: 3px 3px 5px rgb(16, 0, 104);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: rgb(228, 228, 228);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Exo 2', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+.header {
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 27px 11px black;
+}
+
+.header__background {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url('./images/cbanner..jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  z-index: -2;
+  box-shadow: inset 0px -1px 17px 3px black;
+}
+
+.header__heading {
+  text-align: center;
+  font-size: 80px;
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+}
+
+.header_link {
+  margin-top: 40px;
+  border-radius: 5px;
+  background: var(--main-gradient);
+  padding: 0 10px;
+  z-index: 3;
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 10px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-weight: bold;
+  text-shadow: var(--text-shadow);
+  box-shadow: 3px 3px 5px black;
+}
+
+.header_link:hover {
+  opacity: 0.9;
+}
+
+.header_link__image {
+  height: 90%;
+}
+
+.main {
+  height: calc(100% - 800px);
+  background-color: #141414;
+  flex-grow: 1;
+}
+
+.footer {
+  box-shadow: 0 -3px 2px rgb(19, 0, 37);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: var(--main-gradient);
+}
+
+
+/* effect */
+.shine {
+  position: absolute;
+  top: 0;
+  left: -200px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.header_link:hover .shine {
+  transition: transform 0.3s ease-out;
+  transform: skewX(20deg) translateX(400px);
+}
