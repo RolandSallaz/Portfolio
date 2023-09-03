@@ -79,13 +79,13 @@ img {
 
 .header_link {
   margin-top: 40px;
-  border-radius: 5px;
+  height: 50px;
   background: var(--main-gradient);
   padding: 0 10px;
   z-index: 3;
   font-size: 20px;
   font-family: 'Lato', sans-serif;
-  height: 50px;
+  font-weight: bold;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -93,7 +93,6 @@ img {
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  font-weight: bold;
   text-shadow: var(--text-shadow);
   box-shadow: 3px 3px 5px black;
 }
@@ -112,6 +111,40 @@ img {
   flex-grow: 1;
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  margin: 50px 60px;
+  gap: 50px;
+}
+
+.card {
+  background-color: rgb(231, 231, 231);
+  padding: 10px;
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  color: black;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card__link {
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgb(219, 219, 219);
+}
+
+.card__image {
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
 .footer {
   box-shadow: 0 -3px 2px rgb(19, 0, 37);
   padding: 0 20px;
@@ -121,9 +154,8 @@ img {
   background: var(--main-gradient);
 }
 
-
 /* effect */
-.shine {
+.header_link .shine {
   position: absolute;
   top: 0;
   left: -200px;
@@ -132,7 +164,51 @@ img {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.card .shine {
+  position: absolute;
+  top: 0;
+  left: -400px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+}
+
 .header_link:hover .shine {
   transition: transform 0.3s ease-out;
   transform: skewX(20deg) translateX(400px);
+}
+
+.card:hover .shine {
+  transition: transform 0.3s ease-out;
+  transform: skewX(20deg) translateX(900px);
+}
+
+/* mobile */
+
+@media only screen and (max-width: 1279px) {
+  .header__heading {
+    font-size: 60px;
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header__heading {
+    font-size: 40px;
+  }
+
+  .cards {
+    margin: 10px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .card {
+    justify-self: center;
+  }
+
+  .card__image {
+    height: 200px;
+  }
 }
