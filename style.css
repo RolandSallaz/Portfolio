@@ -93,12 +93,7 @@ img {
   text-decoration: none;
   position: relative;
   overflow: hidden;
-  text-shadow: var(--text-shadow);
-  box-shadow: 3px 3px 5px black;
-}
-
-.header_link:hover {
-  opacity: 0.9;
+  box-shadow: 1px 1px 2px black;
 }
 
 .header_link__image {
